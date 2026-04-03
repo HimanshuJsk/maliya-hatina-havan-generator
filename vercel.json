@@ -20,6 +20,10 @@
       "dest": "/public/assets/$1"
     },
     {
+      "src": "/imagegenerator.html",
+      "dest": "/public/imagegenerator.html"
+    },
+    {
       "src": "/(.*).(js|css|png|jpg|jpeg|gif|ico|svg)",
       "dest": "/public/$1.$2"
     },
