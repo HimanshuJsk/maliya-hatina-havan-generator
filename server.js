@@ -8,11 +8,7 @@ app.use(express.json({ limit: '10mb' }));
 app.use(express.static('public'));
 
 // 1. DATABASE CONNECTION
-// Replace 'YOUR_MONGODB_URI' with your actual MongoDB Atlas connection string
-//YOUR_MONGODB_URI_HERE = "mongodb+srv://shreesanchraimataji_db_user:tnnVvrryduaT3u43@cluster0.gcmm6tq.mongodb.net/?appName=Cluster0";
-
-//const MONGODB_URI = process.env.MONGODB_URI || "mongodb+srv://shreesanchraimataji_db_user:tnnVvrryduaT3u43@cluster0.gcmm6tq.mongodb.net/?appName=Cluster0/";
-const MONGODB_URI = process.env.MONGODB_URI || "mongodb+srv://shreesanchraimataji_db_user:tnnVvrryduaT3u43@cluster0.gcmm6tq.mongodb.net/havanDB?retryWrites=true&w=majority";
+const MONGODB_URI = process.env.MONGODB_URI;
 
 mongoose.connect(MONGODB_URI)
     .then(() => console.log("Connected to MongoDB"))
