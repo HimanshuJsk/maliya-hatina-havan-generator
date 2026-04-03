@@ -1,0 +1,52 @@
+const express = require('express');
+const path = require('path');
+const mongoose = require('mongoose');
+const app = express();
+
+// INCREASE LIMIT for base64 images
+app.use(express.json({ limit: '10mb' }));
+app.use(express.static('public'));
+
+// 1. DATABASE CONNECTION
+// Replace 'YOUR_MONGODB_URI' with your actual MongoDB Atlas connection string
+//YOUR_MONGODB_URI_HERE = "mongodb+srv://shreesanchraimataji_db_user:tnnVvrryduaT3u43@cluster0.gcmm6tq.mongodb.net/?appName=Cluster0";
+
+//const MONGODB_URI = process.env.MONGODB_URI || "mongodb+srv://shreesanchraimataji_db_user:tnnVvrryduaT3u43@cluster0.gcmm6tq.mongodb.net/?appName=Cluster0/";
+const MONGODB_URI = process.env.MONGODB_URI || "mongodb+srv://shreesanchraimataji_db_user:tnnVvrryduaT3u43@cluster0.gcmm6tq.mongodb.net/havanDB?retryWrites=true&w=majority";
+
+mongoose.connect(MONGODB_URI)
+    .then(() => console.log("Connected to MongoDB"))
+    .catch(err => console.error("Could not connect to MongoDB", err));
+
+// 2. DEFINE THE DATA SCHEMA
+const bannerSchema = new mongoose.Schema({
+    name: String,
+    city: String,    // Added city field
+    mobile: String,
+    imageBase64: String,
+    createdAt: { type: Date, default: Date.now }
+});
+
+const Banner = mongoose.model('Banner', bannerSchema);
+
+// 3. API ROUTE TO SAVE DATA
+app.post('/api/save-banner', async (req, res) => {
+    try {
+        const { name, city, mobile, imageBase64 } = req.body; // Destructure city
+        const newBanner = new Banner({ name, city, mobile, imageBase64 });
+        await newBanner.save();
+        res.status(201).send({ message: "Data saved to database successfully!" });
+    } catch (error) {
+        console.error(error);
+        res.status(500).send({ message: "Error saving to database" });
+    }
+});
+
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'imagegenerator.html'));
+});
+
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`Server running at http://localhost:${PORT}`);
+});

@@ -1,0 +1,12 @@
+{
+  "name": "hanuman-katha-generator",
+  "version": "1.0.0",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongoose": "^7.8.9"
+  },
+  "scripts": {
+    "start": "node server.js"
+  }
+}

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="logo.png">
+    <title>Kuldevi Shree Sanchrai Mataji Havan - Maliya Hatina</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/css/intlTelInput.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div id="preloader"></div>
+
+    <div class="main-wrapper py-5">
+        <div class="custom-container shadow">
+            <div class="banner-preview-box">
+                <img src="assets/maliya-hatina-banner.png" class="img-fluid rounded-top" id="placeholderImg"
+                    alt="Banner">
+            </div>
+
+            <div class="content-box p-4">
+                <h5 class="text-center text-orange mb-4">Make your images For<br>Kuldevi Shree Sanchrai Mataji Havan -
+                    Maliya Hatina</h5>
+
+                <div class="upload-section border-dashed-box p-4 mb-4">
+                    <p class="text-center text-orange fw-bold">Upload Your Photo & Enter Name</p>
+
+                    <div class="mb-3">
+                        <label class="form-label small fw-bold">તમારું નામ *</label>
+                        <input type="text" id="userName" class="form-control custom-input" placeholder="તમારું નામ દાખલ કરો"
+                            maxlength="50">
+                        <span class="text-muted tiny">મહત્તમ 50 અક્ષરોની મંજૂરી છે</span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label small fw-bold">શહેર *</label>
+                        <input type="text" id="userCity" class="form-control custom-input"
+                            placeholder="તમારું શહેર દાખલ કરો">
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label small fw-bold">મોબાઈલ નંબર *</label>
+                        <div class="tel-input-wrapper">
+                            <input type="tel" id="userMobile" class="form-control custom-input"
+                                placeholder="મોબાઇલ નંબર દાખલ કરો">
+                        </div>
+                    </div>
+
+                    <div id="dropZone" class="upload-dropzone mt-3">
+                        <img src="https://cdn-icons-png.flaticon.com/512/685/685655.png" width="40" class="mb-2">
+                        <p class="mb-0">Click to upload or drag and drop *</p>
+                        <span class="text-muted tiny">JPG, PNG, GIF up to 10MB</span>
+                        <input type="file" id="fileInput" hidden accept="image/*">
+                    </div>
+                </div>
+
+                <div class="action-buttons">
+                    <button id="generateBtn" class="btn btn-generate w-100 mb-3">✨ Generate Image</button>
+                    <div id="resultArea" class="d-none">
+                        <canvas id="mainCanvas" class="img-fluid"
+                            style="border-radius: 10px; border: 1px solid #920d00;"></canvas>
+                    </div>
+                    <div id="downloadBox" class="d-none d-flex gap-2">
+                        <button id="downloadBtn" class="btn btn-success flex-grow-1">📥 Download Image</button>
+                        <button onclick="location.reload()" class="btn btn-secondary">🔄 New</button>
+                    </div>
+                </div>
+
+                <p class="text-center mt-3 tiny" style="color: black;">Developed by <a
+                        href="https://himanshudev.infy.uk/" style="text-decoration: none; color: black;">Himanshu
+                        Parmar</a></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="cropperModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5>Crop Your Photo (Round)</h5>
+                </div>
+                <div class="modal-body">
+                    <div class="img-container"><img id="imageToCrop" src=""></div>
+                </div>
+                <div class="modal-footer"><button id="cropSaveBtn" class="btn btn-primary w-100">Save & Crop</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" title="Go to top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/js/intlTelInput.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

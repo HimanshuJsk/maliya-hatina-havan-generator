@@ -1,0 +1,160 @@
+body {
+    background: linear-gradient(135deg, #fff3e0 0%, #ffcc80 100%);
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: #ffffff url('loading.gif') no-repeat center center;
+    background-size: 150px;
+    /* જરૂર મુજબ સાઈઝ બદલી શકો */
+    z-index: 9999;
+    /* સૌથી ઉપર રાખવા માટે */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.custom-container {
+    background: white;
+    max-width: 750px;
+    margin: auto;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.text-orange {
+    color: #920d00;
+}
+
+.tiny {
+    font-size: 11px;
+}
+
+.border-dashed-box {
+    border: 1px dashed #920d00;
+    border-radius: 15px;
+}
+
+.custom-input {
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+.upload-dropzone {
+    border: 1px dashed #ccc;
+    border-radius: 10px;
+    text-align: center;
+    padding: 30px;
+    cursor: pointer;
+    background: #fafafa;
+}
+
+.tel-input-wrapper .iti {
+    width: 100% !important;
+    display: block;
+}
+
+.tel-input-wrapper .iti input {
+    width: 100% !important;
+    height: 45px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.iti__country-list {
+    z-index: 1055 !important;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    max-width: 300px;
+}
+
+.iti__selected-dial-code {
+    color: #920d00;
+    font-weight: bold;
+    margin-left: 6px;
+}
+
+.btn-generate {
+    background: linear-gradient(90deg, #920d00 0%, #ff8c00 100%);
+    border: none;
+    color: white;
+    font-weight: bold;
+    border-radius: 30px;
+    padding: 12px;
+}
+
+.img-container img {
+    max-width: 100%;
+}
+
+/* Back to Top Button */
+#backToTop {
+    position: fixed;
+    bottom: 50px;
+    right: 25px;
+    z-index: 999;
+    background-color: var(--primary-reddark);
+    color: white;
+    border: none;
+    padding: 10px 14px;
+    border-radius: 50%;
+    border: 2px solid #ffcc80;
+    font-size: 18px;
+    cursor: pointer;
+    display: none;
+    transition: all 0.3s ease;
+}
+
+#backToTop:hover {
+    background-color: var(--primary-reddark);
+    border: 2px solid #ffcc80;
+    transform: translateY(-3px);
+}
+
+@media (max-width: 576px) {
+    .main-wrapper {
+        padding: 10px;
+    }
+
+    .custom-container {
+        border-radius: 15px;
+    }
+
+    .content-box {
+        padding: 20px 15px !important;
+    }
+
+    h5 {
+        font-size: 1.1rem;
+    }
+
+    .btn-generate {
+        font-size: 1rem;
+        padding: 12px;
+    }
+}
+
+@media (min-width: 768px) {
+    .main-wrapper {
+        padding: 40px 15px;
+    }
+
+    .custom-container {
+        max-width: 600px;
+    }
+}
+
+.img-container {
+    max-height: 70vh;
+    overflow: hidden;
+}
