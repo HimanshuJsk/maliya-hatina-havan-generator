@@ -109,7 +109,7 @@ document.getElementById('generateBtn').onclick = async () => {
             ctx.restore();
 
             ctx.fillStyle = "#002e5b";
-            ctx.font = "bold 35px Arial";
+            ctx.font = "bold 38px Arial";
             ctx.textAlign = "center";
             ctx.fillText(name, 1080, 1040);
 
